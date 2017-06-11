@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace MachiKoro
 {
@@ -11,6 +11,8 @@ namespace MachiKoro
            
             Console.WriteLine("did you say " + numberOfPlayer + " players?");
             Console.WriteLine("What's the name of the first player?");
+			string fpName = Console.ReadLine();
+			Console.WriteLine(string.Format("Hi {0}!",fpName));
             Console.ReadKey();
         }
 
