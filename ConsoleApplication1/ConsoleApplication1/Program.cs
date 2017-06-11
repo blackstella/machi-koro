@@ -1,5 +1,6 @@
 using System;
-
+using System.Collections.Generic;
+using System.Drawing;
 namespace MachiKoro
 {
     class Program
@@ -30,6 +31,38 @@ namespace MachiKoro
         }
 
     }
+	public class Game
+    {
+        public Game (List<Player> players)
+        {
+            Players = players;
+        }
+        public List<Player> Players { get; set; }
+        public int CurentPlayerIndex { get; set; }
+
+    }
+	public class Player
+    {
+        public string Name { get; set; }
+        public int LandmarkCount { get; set; }
+
+        public int Money { get; set; } 
+
+        public List<Card> Cards { get; set; }
+
+        public bool CanRole2Dices { get; set; }
+    }
+	public enum SymbolType {cup, bread, gear, wheat, cow, boat, tower, apple, factory }
+    public abstract class  Card
+    {
+        public string ID { get; set; }
+        public int MatchNum { get; set; }
+        public Color FaceColor { get; set; }
+        public int Cost { get; set; }
+
+        public SymbolType Symbol { get; set; }
+
+        public abstract void PayRule();
 
     class Person
     {
@@ -55,5 +88,6 @@ namespace MachiKoro
 
     }
 
+    }
   
 }
