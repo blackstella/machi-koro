@@ -1,5 +1,10 @@
 using System;
+<<<<<<< HEAD
 
+=======
+using System.Collections.Generic;
+using System.Drawing;
+>>>>>>> refs/remotes/origin/master
 namespace MachiKoro
 {
     class Program
@@ -9,8 +14,15 @@ namespace MachiKoro
             Console.WriteLine("How many players are there:P?");
             int numberOfPlayer = Convert.ToInt32(Console.ReadLine());
            
+<<<<<<< HEAD
             Console.WriteLine("Did you say " + numberOfPlayer + " players?");
             Console.WriteLine("What's the name of the first player:P?");
+=======
+            Console.WriteLine("did you say " + numberOfPlayer + " players?");
+            Console.WriteLine("What's the name of the first player?");
+			string fpName = Console.ReadLine();
+			Console.WriteLine(string.Format("Hi {0}!",fpName));
+>>>>>>> refs/remotes/origin/master
             Console.ReadKey();
         }
 
@@ -28,6 +40,38 @@ namespace MachiKoro
         }
 
     }
+	public class Game
+    {
+        public Game (List<Player> players)
+        {
+            Players = players;
+        }
+        public List<Player> Players { get; set; }
+        public int CurentPlayerIndex { get; set; }
+
+    }
+	public class Player
+    {
+        public string Name { get; set; }
+        public int LandmarkCount { get; set; }
+
+        public int Money { get; set; } 
+
+        public List<Card> Cards { get; set; }
+
+        public bool CanRole2Dices { get; set; }
+    }
+	public enum SymbolType {cup, bread, gear, wheat, cow, boat, tower, apple, factory }
+    public abstract class  Card
+    {
+        public string ID { get; set; }
+        public int MatchNum { get; set; }
+        public Color FaceColor { get; set; }
+        public int Cost { get; set; }
+
+        public SymbolType Symbol { get; set; }
+
+        public abstract void PayRule();
 
     class Person
     {
@@ -53,5 +97,6 @@ namespace MachiKoro
 
     }
 
+    }
   
 }
